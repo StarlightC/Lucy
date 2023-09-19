@@ -1,26 +1,20 @@
 import com.spicycold.lucy.version.*
 
 plugins {
-    id("com.android.application")
+    id("com.android.library")
     id("org.jetbrains.kotlin.android")
     id("com.spicycold.lucy.version")
 }
 
 android {
-    namespace = "com.spicycold.lucy"
+    namespace = "com.spicycold.lucy.base"
     compileSdk = CompileVersion.CompileSDK
 
     defaultConfig {
-        applicationId = "com.spicycold.lucy"
         minSdk = CompileVersion.MinAndroidSDK
-        targetSdk = CompileVersion.TargetSDK
-        versionCode = CompileVersion.Code
-        versionName = CompileVersion.Name
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-        vectorDrawables {
-            useSupportLibrary = true
-        }
+        consumerProguardFiles("consumer-rules.pro")
     }
 
     buildTypes {
@@ -39,20 +33,20 @@ android {
     kotlinOptions {
         jvmTarget = CompileVersion.JVM
     }
-    buildFeatures {
-        compose = true
-    }
-    composeOptions {
-        kotlinCompilerExtensionVersion = CompileVersion.KotlinCompilerExtension
-    }
-    packaging {
-        resources {
-            excludes += "/META-INF/{AL2.0,LGPL2.1}"
-        }
-    }
 }
 
 dependencies {
+    api("androidx.core:core-ktx:${AndroidVersion.Core}")
+    api("androidx.appcompat:appcompat:${AndroidVersion.AppCompat}")
+    api("androidx.lifecycle:lifecycle-runtime-ktx:${AndroidVersion.Lifecycle}")
+    api("androidx.lifecycle:lifecycle-viewmodel-ktx:${AndroidVersion.Lifecycle}")
+    api("androidx.lifecycle:lifecycle-viewmodel-compose:${AndroidVersion.Lifecycle}")
+    api("androidx.activity:activity-compose:${AndroidVersion.Activity}")
+    api(platform("androidx.compose:compose-bom:${AndroidVersion.ComposeBOM}"))
+    api("androidx.compose.ui:ui")
+    api("androidx.compose.ui:ui-graphics")
+    api("androidx.compose.ui:ui-tooling-preview")
+    api("androidx.compose.material3:material3")
     testImplementation("junit:junit:${AndroidVersion.JavaUnit}")
     androidTestImplementation("androidx.test.ext:junit:${AndroidVersion.AndroidJUnit}")
     androidTestImplementation("androidx.test.espresso:espresso-core:${AndroidVersion.Espresso}")
@@ -60,8 +54,4 @@ dependencies {
     androidTestImplementation("androidx.compose.ui:ui-test-junit4")
     debugImplementation("androidx.compose.ui:ui-tooling")
     debugImplementation("androidx.compose.ui:ui-test-manifest")
-
-    implementation(project(":base"))
-
-    implementation("io.coil-kt:coil-compose:${ThirdPartyVersion.Coil}")
 }

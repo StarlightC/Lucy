@@ -16,6 +16,7 @@ object AndroidVersion {
     const val Robolectric = "4.6.1"
 
     const val Core = "1.12.0"
+    const val AppCompat = "1.6.1"
     const val Activity = "1.7.2"
     const val ComposeBOM = "2023.03.00"
     const val Lifecycle = "2.6.2"

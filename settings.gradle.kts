@@ -16,3 +16,5 @@ dependencyResolutionManagement {
 rootProject.name = "Lucy"
 include(":app")
 includeBuild("plugin_version")
+include(":base")
+include(":floating")

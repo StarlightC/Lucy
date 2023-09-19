@@ -1,4 +1,4 @@
-package com.spicycold.lucy.ui.theme
+package com.spicycold.lucy.app.ui.theme
 
 import androidx.compose.ui.graphics.Color
 

@@ -1,26 +1,20 @@
 import com.spicycold.lucy.version.*
 
 plugins {
-    id("com.android.application")
+    id("com.android.library")
     id("org.jetbrains.kotlin.android")
     id("com.spicycold.lucy.version")
 }
 
 android {
-    namespace = "com.spicycold.lucy"
+    namespace = "com.spicycold.lucy.floating"
     compileSdk = CompileVersion.CompileSDK
 
     defaultConfig {
-        applicationId = "com.spicycold.lucy"
         minSdk = CompileVersion.MinAndroidSDK
-        targetSdk = CompileVersion.TargetSDK
-        versionCode = CompileVersion.Code
-        versionName = CompileVersion.Name
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-        vectorDrawables {
-            useSupportLibrary = true
-        }
+        consumerProguardFiles("consumer-rules.pro")
     }
 
     buildTypes {
@@ -39,17 +33,6 @@ android {
     kotlinOptions {
         jvmTarget = CompileVersion.JVM
     }
-    buildFeatures {
-        compose = true
-    }
-    composeOptions {
-        kotlinCompilerExtensionVersion = CompileVersion.KotlinCompilerExtension
-    }
-    packaging {
-        resources {
-            excludes += "/META-INF/{AL2.0,LGPL2.1}"
-        }
-    }
 }
 
 dependencies {
@@ -63,5 +46,6 @@ dependencies {
 
     implementation(project(":base"))
 
+    implementation("androidx.lifecycle:lifecycle-service:${AndroidVersion.Lifecycle}")
     implementation("io.coil-kt:coil-compose:${ThirdPartyVersion.Coil}")
 }

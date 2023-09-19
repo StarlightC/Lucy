@@ -1,4 +1,4 @@
-package com.spicycold.lucy.ui.theme
+package com.spicycold.lucy.app.ui.theme
 
 import android.app.Activity
 import android.os.Build
@@ -38,7 +38,7 @@ private val LightColorScheme = lightColorScheme(
 )
 
 @Composable
-fun LucyTheme(
+fun STheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
     // Dynamic color is available on Android 12+
     dynamicColor: Boolean = true,
