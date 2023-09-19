@@ -12,9 +12,3 @@ dependencyResolutionManagement {
         mavenCentral()
     }
 }
-
-rootProject.name = "Lucy"
-includeBuild("plugin_version")
-include(":app")
-include(":base")
-include(":floating")

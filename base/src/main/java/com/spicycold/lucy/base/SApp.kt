@@ -8,5 +8,5 @@ import android.app.Application
  *
  * Base Application
  */
-class SApp: Application(){
+abstract class SApp: Application(){
 }

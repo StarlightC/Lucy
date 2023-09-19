@@ -1,7 +1,5 @@
 package com.spicycold.lucy.version
 
-import org.gradle.internal.impldep.com.google.api.services.storage.model.Bucket.Lifecycle
-
 /**
  * @author StarlightC
  * @since 14/9/2023
@@ -20,4 +18,6 @@ object AndroidVersion {
     const val Activity = "1.7.2"
     const val ComposeBOM = "2023.03.00"
     const val Lifecycle = "2.6.2"
+    const val Hilt = "2.44"
+    const val Navigation = "2.7.2"
 }

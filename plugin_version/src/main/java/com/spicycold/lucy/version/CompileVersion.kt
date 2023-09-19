@@ -16,6 +16,8 @@ object CompileVersion {
     val Java = JavaVersion.VERSION_17
     const val JVM = "17"
 
+    const val Kotlin = "1.8.10"
+    const val AndroidGradlePlugin = "8.1.1"
     const val CompileSDK = 34
     const val MinAndroidSDK = 27
     const val TargetSDK = 34

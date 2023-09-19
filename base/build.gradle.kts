@@ -47,6 +47,7 @@ dependencies {
     api("androidx.compose.ui:ui-graphics")
     api("androidx.compose.ui:ui-tooling-preview")
     api("androidx.compose.material3:material3")
+    api("androidx.navigation:navigation-compose:${AndroidVersion.Navigation}")
     testImplementation("junit:junit:${AndroidVersion.JavaUnit}")
     androidTestImplementation("androidx.test.ext:junit:${AndroidVersion.AndroidJUnit}")
     androidTestImplementation("androidx.test.espresso:espresso-core:${AndroidVersion.Espresso}")
@@ -54,4 +55,5 @@ dependencies {
     androidTestImplementation("androidx.compose.ui:ui-test-junit4")
     debugImplementation("androidx.compose.ui:ui-tooling")
     debugImplementation("androidx.compose.ui:ui-test-manifest")
+
 }

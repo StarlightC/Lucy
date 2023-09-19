@@ -4,6 +4,8 @@ plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
     id("com.spicycold.lucy.version")
+    id("com.google.dagger.hilt.android")
+    kotlin("kapt") // 保持该行位于最低部，否则会在编译时产生警告
 }
 
 android {
@@ -60,6 +62,9 @@ dependencies {
     androidTestImplementation("androidx.compose.ui:ui-test-junit4")
     debugImplementation("androidx.compose.ui:ui-tooling")
     debugImplementation("androidx.compose.ui:ui-test-manifest")
+    // 需要使用Hilt的类需要单独引入以下两个依赖和Hilt plugin
+    implementation("com.google.dagger:hilt-android:${AndroidVersion.Hilt}")
+    kapt("com.google.dagger:hilt-android-compiler:${AndroidVersion.Hilt}")
 
     implementation(project(":base"))
 
