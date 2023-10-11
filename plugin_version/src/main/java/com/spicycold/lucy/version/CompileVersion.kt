@@ -19,7 +19,7 @@ object CompileVersion {
     const val Kotlin = "1.8.10"
     const val AndroidGradlePlugin = "8.1.1"
     const val CompileSDK = 34
-    const val MinAndroidSDK = 27
+    const val MinAndroidSDK = 30
     const val TargetSDK = 34
     const val CMake = "3.22.1"
     const val KotlinCompilerExtension = "1.4.3"

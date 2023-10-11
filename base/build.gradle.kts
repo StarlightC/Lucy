@@ -38,7 +38,7 @@ android {
 dependencies {
     api("androidx.core:core-ktx:${AndroidVersion.Core}")
     api("androidx.appcompat:appcompat:${AndroidVersion.AppCompat}")
-    api("androidx.lifecycle:lifecycle-runtime-ktx:${AndroidVersion.Lifecycle}")
+    api("androidx.lifecycle:lifecycle-viewmodel-savedstate:${AndroidVersion.Lifecycle}")
     api("androidx.lifecycle:lifecycle-viewmodel-ktx:${AndroidVersion.Lifecycle}")
     api("androidx.lifecycle:lifecycle-viewmodel-compose:${AndroidVersion.Lifecycle}")
     api("androidx.activity:activity-compose:${AndroidVersion.Activity}")
